@@ -51,9 +51,9 @@
 		"$oid": "5f0280ca258ff350affd3609"
 	},
 	"featured": true,
-	"name": "Node Outdoor Apparel",
-	"image": "images/node-logo.png",
-	"description": "From polar fleeces to swimsuits, hiking boots to waders, a visit to Node will be sure to get you covered.",
+	"name": "Resident Evil",
+	"image": "images/resident-evil.webp",
+	"description": "Set across two timelines – the show's present day setting of 2036, plus flashback sequences occurring in 2022 – Resident Evil follows Jade Wesker (Ella Balinska) as she searches for her lost sister Billie (Adeline Rudolph) amid another zombie apocalypse. The duo were separated during the early days of the outbreak, which was caused by the Umbrella Corporation's new antidepressant – Joy – that contains the T-virus, the man-made mutagenic that turns humans into bloodthirsty zombies. Oh, and other living creatures into all kinds of horrifying monsters.",
 	"createdAt": {
 		"$date": "2020-07-06T01:39:22.833Z"
 	},

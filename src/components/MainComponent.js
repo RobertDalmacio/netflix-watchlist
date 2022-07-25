@@ -55,7 +55,6 @@ class Main extends Component {
     render() {
 
         const HomePage = () => {
-            
             return (
                 <Home
                     campsite={this.props.campsites.campsites.filter(campsite => campsite.featured)[0]}

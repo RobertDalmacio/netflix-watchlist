@@ -57,11 +57,11 @@
 		"$oid": "5f028064258ff350affd3605"
 	},
 	"featured": true,
-	"name": "Redux Woods Campground",
-	"image": "images/redux-woods.jpg",
-	"elevation": 42,
+	"name": "Stranger Things",
+	"image": "images/stranger-things.webp",
+	"elevation": 420,
 	"cost": 55,
-	"description": "You'll never want to leave this hidden gem, deep within the lush Redux Woods.",
+	"description": "Stranger Things is a brilliant homage to '80s pop culture. Leaning heavily on Spielberg, John Carpenter and Stephen King – so much King, in fact – the story revolves around a small town, a group of friends, a missing person and a dodgy science lab. Writing anything else would give away the myriad twists in a show that is full of creepy fun, superhero-esque action, thrilling mysteries, and devilishly gruesome horror.",
 	"createdAt": {
 		"$date": "2020-07-06T01:37:40.968Z"
 	},

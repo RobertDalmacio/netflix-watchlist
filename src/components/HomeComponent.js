@@ -17,11 +17,11 @@ function RenderCard({item, isLoading, errMess}) {
             transformProps={{
                 exitTransform: 'scale(0.5) translateY(50%)'
             }}>
-            <Card>
+            <Card style={{backgroundColor: '#000', color: 'white'}}>
                 <CardImg src={baseUrl + item.image} alt={item.name} />
                 <CardBody>
-                    <CardTitle>{item.name}</CardTitle>
-                    <CardText>{item.description}</CardText>
+                    <CardTitle style={{fontSize: '18pt', color: '#e60023'}}>{item.name}</CardTitle>
+                    <CardText style={{ fontSize: '10pt', overflow: 'hidden', textOverflow: 'ellipsis', maxHeight: '180px'}}>{item.description}</CardText>
                 </CardBody>
             </Card>
         </FadeTransform>
@@ -29,25 +29,28 @@ function RenderCard({item, isLoading, errMess}) {
 }
 
 function Home(props) {
+    console.log('campsite', props.campsite)
     return (
         <div className='container'>
-            <h1 style={{color: 'white'}}>Recently Watched</h1>
             <div className='row'>
-                <div className='col-md m-1'>
+                <div className='col-md m-1 text-center'>
+                    <h1 style={{color: 'white'}}>Trending Now</h1>
                     <RenderCard
                         item={props.campsite}
                         isLoading={props.campsitesLoading}
                         errMess={props.campsitesErrMess}
                     />
                 </div>
-                <div className='col-md m-1'>
+                <div className='col-md m-1 text-center'>
+                    <h1 style={{color: 'white'}}>New Release</h1>
                     <RenderCard
                         item={props.promotion}
                         isLoading={props.promotionLoading}
                         errMess={props.promotionErrMess}
                     />
                 </div>
-                <div className='col-md m-1'>
+                <div className='col-md m-1 text-center'>
+                    <h1 style={{color: 'white'}}>Netflix Exclusive</h1>
                     <RenderCard 
                         item={props.partner}
                         isLoading={props.partnerLoading}
