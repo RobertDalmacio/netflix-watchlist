@@ -15,7 +15,7 @@ function RenderCampsite({campsite, favorite, postFavorite}) {
                 transformProps={{
                     exitTransform: 'scale(0.5) translateY(-50%)'
                 }}>
-                <Card>
+                <Card style={{backgroundColor: '#000', color: 'white'}}>
                     <CardImg top src={baseUrl + campsite.image} alt={campsite.name} />
                     <CardImgOverlay>
                         <Button outline color="primary" onClick={() => favorite ? console.log('Already favorite') : postFavorite(campsite._id)}>
@@ -28,7 +28,7 @@ function RenderCampsite({campsite, favorite, postFavorite}) {
                         </Button>
                     </CardImgOverlay>
                     <CardBody>
-                        <CardText>{campsite.description}</CardText>
+                        <CardText style={{ fontSize: '10pt', overflow: 'hidden', textOverflow: 'ellipsis', maxHeight: '180px'}}>{campsite.description}</CardText>
                     </CardBody>
                 </Card>
             </FadeTransform>
@@ -39,16 +39,15 @@ function RenderCampsite({campsite, favorite, postFavorite}) {
 function RenderComments({comments, postComment, campsiteId}) {
     if (comments) {
         return (
-            <div className="col-md-5 m-1">
-                <h4>Comments</h4>
+            <div className="col-md-5 m-1" style={{color:'#fff'}}>
+                <h4 >Comments</h4>
                 <Stagger in>
                     {
                         comments.map(comment => {
                             return (
                                 <Fade in key={comment._id}>
-                                    <div>
-                                        <p>{comment.text}</p>
-                                        <p>{comment.rating} stars</p>
+                                    <div style={{backgroundColor:'#000', color: 'white'}}>
+                                        <p>{comment.text} - {comment.rating} stars</p>
                                         <p>-- {comment.author.firstname} {comment.author.lastname} , {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day:'2-digit'}).format(new Date(Date.parse(comment.updatedAt)))}</p>
                                     </div>
                                 </Fade>
@@ -88,12 +87,12 @@ class CommentForm extends Component {
     render() {
         return (
             <div>
-                <Button outline onClick={this.toggleModal}>
+                <Button outline onClick={this.toggleModal} style={{backgroundColor: '#e60023', color: 'white'}}>
                     <i className="fa fa-pencil fa-lg" /> Submit Comment
                 </Button>
-                <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
-                    <ModalHeader toggle={this.toggleModal}>Submit Comment</ModalHeader>
-                    <ModalBody>
+                <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal} >
+                    <ModalHeader toggle={this.toggleModal} style={{backgroundColor: '#e60023', color: 'white'}}>Submit Comment</ModalHeader>
+                    <ModalBody style={{backgroundColor: '#e60023', color: 'white'}}>
                         <LocalForm onSubmit={values => this.handleSubmit(values)}>
                             <div className="form-group">
                                 <Label htmlFor="rating">Rating</Label>
@@ -113,7 +112,7 @@ class CommentForm extends Component {
                                     className="form-control"
                                 />
                             </div>
-                            <Button type="submit" color="primary">
+                            <Button type="submit" style={{backgroundColor: '#000', color: 'white'}}>
                                 Submit
                             </Button>
                         </LocalForm>
@@ -151,11 +150,9 @@ function CampsiteInfo(props) {
                 <div className="row">
                     <div className="col">
                         <Breadcrumb>
-                            <BreadcrumbItem><Link to="/directory">Directory</Link></BreadcrumbItem>
-                            <BreadcrumbItem active>{props.campsite.name}</BreadcrumbItem>
+                            <BreadcrumbItem style={{fontWeight: 'bold', color: '#000'}}><Link to="/directory">Directory</Link></BreadcrumbItem>
+                            <BreadcrumbItem active style={{fontWeight: 'bold', color: '#e60023'}}>{props.campsite.name}</BreadcrumbItem>
                         </Breadcrumb>
-                        <h2>{props.campsite.name}</h2>
-                        <hr />
                     </div>
                 </div>
                 <div className="row">

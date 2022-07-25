@@ -10,7 +10,7 @@ function RenderDirectoryItem({campsite}) {
             <Link to={`/directory/${campsite._id}`}>
                 <CardImg width='100%' src={baseUrl + campsite.image} alt={campsite.name} />
                 <CardImgOverlay>
-                    <CardTitle>{campsite.name}</CardTitle>
+                    <CardTitle style={{fontWeight: 'bold'}}>{campsite.name}</CardTitle>
                 </CardImgOverlay>
             </Link>
         </Card>
@@ -48,18 +48,16 @@ function Directory(props) {
         );
     }
     return (
-        <div className='container'>
+        <div className='container' style={{marginBottom: '20px'}}>
             <div className='row'>
                 <div className='col'>
-                    <Breadcrumb>
-                        <BreadcrumbItem><Link to='/home'>Home</Link></BreadcrumbItem>
-                        <BreadcrumbItem active>Directory</BreadcrumbItem>
+                    <Breadcrumb style={{ backgroundColor: '#000'}}>
+                        <BreadcrumbItem style={{fontWeight: 'bold'}}><Link to='/home'>Home</Link></BreadcrumbItem>
+                        <BreadcrumbItem active style={{fontWeight: 'bold'}}>Directory</BreadcrumbItem>
                     </Breadcrumb>
-                    <h2>Directory</h2>
-                    <hr />
                 </div>
             </div>
-            <div className='row'>
+            <div className='row' marginBottom='200px'>
                 {directory}
             </div>
         </div>

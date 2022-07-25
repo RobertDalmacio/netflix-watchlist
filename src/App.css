@@ -8,7 +8,9 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     padding-top: 100px;
-    
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto;
 }
 
 h1, h2, h3, .card-body>.card-title {
@@ -33,9 +35,9 @@ h1, h2, h3, .card-body>.card-title {
 
 .site-footer {
     background-color: #e60023;
-    padding: 20px 20px;
-    position: absolute;
-    bottom: 0;
+    padding: 20px 0;
+    grid-row-start: 2;
+    grid-row-end: 3;
     width: 100%;
     color: #fff;
 }

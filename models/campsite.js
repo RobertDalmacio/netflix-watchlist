@@ -1,9 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-require('mongoose-currency').loadType(mongoose);
-const Currency = mongoose.Types.Currency;
-
 const campsiteSchema = new Schema({
     name: {
         type: String,
@@ -18,19 +15,18 @@ const campsiteSchema = new Schema({
         type: String,
         required: true
     },
-    elevation: {
-        type: Number,
-        required: true
-    },
-    cost: {
-        type: Currency,
-        required: true,
-        min: 0
-    },
-    featured: {
+    trending: {
         type: Boolean,
         default: false
-    }
+    },
+    new: {
+        type: Boolean,
+        default: false
+    },
+    exclusive: {
+        type: Boolean,
+        default: false
+    },
 }, {
     timestamps: true
 });
