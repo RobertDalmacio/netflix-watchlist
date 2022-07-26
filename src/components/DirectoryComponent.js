@@ -53,7 +53,7 @@ function Directory(props) {
                 <div className='col'>
                     <Breadcrumb style={{ backgroundColor: '#000'}}>
                         <BreadcrumbItem style={{fontWeight: 'bold'}}><Link to='/home'>Home</Link></BreadcrumbItem>
-                        <BreadcrumbItem active style={{fontWeight: 'bold'}}>Directory</BreadcrumbItem>
+                        <BreadcrumbItem active style={{fontWeight: 'bold', color: '#e60023'}}>Directory</BreadcrumbItem>
                     </Breadcrumb>
                 </div>
             </div>

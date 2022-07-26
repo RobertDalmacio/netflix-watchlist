@@ -35,14 +35,13 @@ function RenderCard({item, isLoading, errMess}) {
 }
 
 function Home(props) {
-    console.log('campsite', props.campsite)
     return (
         <div className='container' style={{marginBottom: '71px'}}>
             <div className='row'>
                 <div className='col-md m-1 text-center'>
                     <h1 style={{color: 'white'}}>Trending Now</h1>
                     <RenderCard
-                        item={props.campsite}
+                        item={props.trending}
                         isLoading={props.campsitesLoading}
                         errMess={props.campsitesErrMess}
                     />
@@ -50,17 +49,17 @@ function Home(props) {
                 <div className='col-md m-1 text-center'>
                     <h1 style={{color: 'white'}}>New Release</h1>
                     <RenderCard
-                        item={props.promotion}
-                        isLoading={props.promotionLoading}
-                        errMess={props.promotionErrMess}
+                        item={props.new}
+                        isLoading={props.campsitesLoading}
+                        errMess={props.campsitesErrMess}
                     />
                 </div>
                 <div className='col-md m-1 text-center'>
                     <h1 style={{color: 'white'}}>Netflix Exclusive</h1>
                     <RenderCard 
-                        item={props.partner}
-                        isLoading={props.partnerLoading}
-                        errMess={props.partnerErrMess}
+                        item={props.exclusive}
+                        isLoading={props.campsitesLoading}
+                        errMess={props.campsitesErrMess}
                     />
                 </div>
             </div>

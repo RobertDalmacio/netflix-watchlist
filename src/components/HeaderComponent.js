@@ -65,26 +65,20 @@ class Header extends Component {
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink className="nav-link" to="/favorites">
-                                        <i className="fa fa-heart fa-lg" /> My Favorites
-                                    </NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink className="nav-link" to="/aboutus">
-                                        <i className="fa fa-info fa-lg" /> About
-                                    </NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink className="nav-link" to="/contactus">
-                                        <i className="fa fa-address-card fa-lg" /> Contact Us
-                                    </NavLink>
+                                    { this.props.auth.isAuthenticated 
+                                        ?
+                                            <NavLink className="nav-link" to="/favorites">
+                                                <i className="fa fa-heart fa-lg" /> My Favorites
+                                            </NavLink>
+                                        : null
+                                    }
                                 </NavItem>
                             </Nav>
                             <Nav className="ml-auto" navbar>
                                 <NavItem>
                                     { !this.props.auth.isAuthenticated 
                                         ?
-                                        <Button outline onClick={this.toggleModal}>
+                                        <Button outline onClick={this.toggleModal} style={{color: 'white'}}>
                                             <i className="fa fa-sign-in fa-lg" /> Login
                                             {this.props.auth.isFetching 
                                                 ? <span className="fa fa-spinner fa-pulse fa-fw" />
@@ -93,8 +87,8 @@ class Header extends Component {
                                         </Button>
                                         :
                                         <div>
-                                            <div className="navbar-text mr-3">{this.props.auth.user.username}</div>
-                                            <Button outline onClick={this.handleLogout}>
+                                            <div className="navbar-text mr-3" style={{color: 'white'}}>{this.props.auth.user.username}</div>
+                                            <Button outline onClick={this.handleLogout} style={{color: 'white'}}>
                                                 <span className="fa fa-sign-out fa-lg"></span> Logout
                                                 {this.props.auth.isFetching 
                                                     ? <span className="fa fa-spinner fa-pulse fa-fw"/>

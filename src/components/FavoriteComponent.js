@@ -6,17 +6,22 @@ import { Loading } from './LoadingComponent';
 
 function RenderFavoriteItem({ campsite, deleteFavorite }) {
     return (
-        <Media tag='li'>
+        <Media tag='li' style={{backgroundColor: '#fff'}}>
             <Media left middle>
-                <Media object src={baseUrl + campsite.image} alt={campsite.name} />
+                <Media object src={baseUrl + campsite.image} alt={campsite.name} style={{width: '512px'}}/>
             </Media>
-            <Media body className='ml-5'>
-                <Media heading>{campsite.name}</Media>
-                <p>{campsite.description}</p>
-                <Button outline color='danger' onClick={() => deleteFavorite(campsite._id)}>
-                    <i className='fa fa-times' />
+            <Media body className='ml-5 pt-2'>
+                <Button outline color='danger' onClick={() => deleteFavorite(campsite._id)} style={{position: 'absolute', right: '45px'}}>
+                    <i className='fa fa-times'/>
                 </Button>
+                <Media heading className='pt-4' style={{fontWeight: 'bold'}}>{campsite.name}</Media>
+                <p>{campsite.description}</p>
             </Media>
+            <Link to={`/directory/${campsite._id}`}>
+                    <Button style={{backgroundColor: '#e60023', color: '#000', fontWeight: 'bold', fontSize: '10pt', position: 'absolute', right: '45px', bottom: '20px'}}>
+                        View Comments
+                    </Button>
+            </Link>
         </Media>
     );
 }
@@ -49,16 +54,12 @@ const Favorites = props => {
         );
 
         return (
-            <div className='container'>
+            <div className='container' style={{marginBottom: '230px'}}>
                 <div className='row'>
                     <Breadcrumb>
-                        <BreadcrumbItem><Link to='/home'>Home</Link></BreadcrumbItem>
-                        <BreadcrumbItem active>My Favorites</BreadcrumbItem>
+                        <BreadcrumbItem style={{fontWeight: 'bold', color: '#000'}}><Link to='/home'>Home</Link></BreadcrumbItem>
+                        <BreadcrumbItem active style={{fontWeight: 'bold', color: '#e60023'}}>My Favorites</BreadcrumbItem>
                     </Breadcrumb>
-                    <div className='col-12'>
-                        <h3>My Favorites</h3>
-                        <hr />
-                    </div>
                 </div>
                 <div className='row'>
                     <Media list>
@@ -69,9 +70,9 @@ const Favorites = props => {
         );
     } else {
         return (
-            <div className='container'>
-                <div className='row'>
-                    <h4>You have no favorites selected.</h4>
+            <div className='container align-items-center' style={{marginBottom: '609px'}}>
+                <div className='row '>
+                    <h4 style={{color: 'white'}}>You have no favorites selected.</h4>
                 </div>
             </div>
         )
