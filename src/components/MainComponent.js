@@ -45,11 +45,16 @@ class Main extends Component {
     render() {
 
         const HomePage = () => {
+
+            const trendingShows = this.props.campsites.campsites.filter(campsite => campsite.trending)
+            const newShows = this.props.campsites.campsites.filter(campsite => campsite.new)
+            const exclusiveShows = this.props.campsites.campsites.filter(campsite => campsite.exclusive)
+            
             return (
                 <Home
-                    trending={this.props.campsites.campsites.filter(campsite => campsite.trending)[0]}
-                    new={this.props.campsites.campsites.filter(campsite => campsite.new)[0]}
-                    exclusive={this.props.campsites.campsites.filter(campsite => campsite.exclusive)[0]}
+                    trending={trendingShows[Math.floor(Math.random() * trendingShows.length)]}
+                    new={newShows[Math.floor(Math.random() * newShows.length)]}
+                    exclusive={exclusiveShows[Math.floor(Math.random() * exclusiveShows.length)]}
                     campsitesLoading={this.props.campsites.isLoading}
                     campsitesErrMess={this.props.campsites.errMess}
                 />

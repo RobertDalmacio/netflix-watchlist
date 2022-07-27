@@ -52,27 +52,41 @@ class Header extends Component {
                     <div className="container">
                         <NavbarBrand className="mr-auto" href="/"><img src='/assets/images/netflix-watchlists.png' alt='logo' height='50' width='90' /></NavbarBrand>
                         <NavbarToggler onClick={this.toggleNav} />
-                        <Collapse isOpen={this.state.isNavOpen} navbar>
+                        <Collapse isOpen={this.state.isNavOpen} navbar> 
                             <Nav navbar>
-                                <NavItem>
-                                    <NavLink className="nav-link" to="/home">
-                                        <i className="fa fa-home fa-lg" /> Home
-                                    </NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink className="nav-link" to="/directory">
-                                        <i className="fa fa-list fa-lg" /> Directory
-                                    </NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    { this.props.auth.isAuthenticated 
+                                    { !this.props.auth.isAuthenticated 
                                         ?
-                                            <NavLink className="nav-link" to="/favorites">
-                                                <i className="fa fa-heart fa-lg" /> My Favorites
-                                            </NavLink>
-                                        : null
+                                            <>
+                                                <NavItem style={{position: 'absolute', left: '44%', top:'16px'}}>
+                                                    <NavLink className="nav-link" to="/home">
+                                                        <i className="fa fa-home fa-lg" /> Home
+                                                    </NavLink>
+                                                </NavItem>
+                                                <NavItem style={{position: 'absolute', left: '51%', top:'16px'}}>
+                                                    <NavLink className="nav-link" to="/directory">
+                                                        <i className="fa fa-list fa-lg" /> Directory
+                                                    </NavLink>
+                                                </NavItem>
+                                            </>
+                                        : 
+                                            <>
+                                                <NavItem style={{position: 'absolute', left: '37%', top:'16px'}}>
+                                                    <NavLink className="nav-link" to="/home">
+                                                        <i className="fa fa-home fa-lg" /> Home
+                                                    </NavLink>
+                                                </NavItem>
+                                                <NavItem style={{position: 'absolute', left: '47%', top:'16px'}}>
+                                                    <NavLink className="nav-link" to="/directory">
+                                                        <i className="fa fa-list fa-lg" /> Directory
+                                                    </NavLink>
+                                                </NavItem>
+                                                <NavItem style={{position: 'absolute', left: '57%', top:'16px'}}>
+                                                    <NavLink className="nav-link" to="/favorites">
+                                                        <i className="fa fa-heart fa-lg" /> My Favorites
+                                                    </NavLink>
+                                                </NavItem>
+                                            </>
                                     }
-                                </NavItem>
                             </Nav>
                             <Nav className="ml-auto" navbar>
                                 <NavItem>

@@ -113,6 +113,8 @@ export const postComment = (campsiteId, rating, text) => dispatch => {
     });
 };
 
+export const newUser = (firstName, lastName, username, password) => {}
+
 export const requestLogin = creds => {
     return {
         type: ActionTypes.LOGIN_REQUEST,
@@ -133,6 +135,8 @@ export const loginError = message => {
         message
     }
 }
+
+
 
 export const loginUser = creds => dispatch => {
     // We dispatch requestLogin to kickoff the call to the API

@@ -57,7 +57,7 @@ function Directory(props) {
                     </Breadcrumb>
                 </div>
             </div>
-            <div className='row' marginBottom='200px'>
+            <div className='row justify-content-center' marginBottom='200px' >
                 {directory}
             </div>
         </div>

@@ -4,7 +4,7 @@
 	},
 	"trending": false,
 	"new": false,
-	"exclusive": false,
+	"exclusive": true,
 	"name": "Virgin River",
 	"image": "images/Virgin-River.webp",
 	"description": "Based on Robyn Carr's novels of the same name, Virgin River follows Mel Menroe (Alexandra Breckenridge), a midwife and nurse who moves to the small Californian town of Virgin River to start a new life. Virgin River, though, doesn't end up being quite what Mel expected.",
@@ -21,7 +21,7 @@
 		"$oid": "5f02803a258ff350affd3602"
 	},
 	"trending": false,
-	"new": false,
+	"new": true,
 	"exclusive": false,
 	"name": "Resident Evil",
 	"image": "images/Resident-Evil.webp",
@@ -39,8 +39,8 @@
 		"$oid": "5f02804e258ff350affd3603"
 	},
 	"trending": false,
-	"new": true,
-	"exclusive": false,
+	"new": false,
+	"exclusive": true,
 	"name": "The Umbrella Academy",
 	"image": "images/The-Umbrella-Academy.webp",
 	"description": "Spend a few sunny days and starry nights beneath a canopy of old-growth firs at this enchanting spot by the Chrome River.",
@@ -56,9 +56,9 @@
 	"_id": {
 		"$oid": "5f02805d258ff350affd3604"
 	},
-	"trending": false,
+	"trending": true,
 	"new": false,
-	"exclusive": true,
+	"exclusive": false,
 	"name": "Peaky Blinders",
 	"image": "images/Peaky-Blinders.webp",
 	"description": "Loosely based on the real-life Peaky Blinders gang that menacingly patrolled the streets in the late 19th and early 20th century, the show largely follows the exploits of Tommy Shelby (Cillian Murphy), the ambitious and cunning leader of the Shelby family. The series charts the rise and fall of the Shelbys as they navigate the changing landscape at home and abroad, trying to stay one step ahead of the authorities while simultaneously tackling global issues including the prohibition era and the rise of fascism in the 1930s.",
@@ -94,7 +94,7 @@
 	},
 	"trending": false,
 	"new": false,
-	"exclusive": false,
+	"exclusive": true,
 	"name": "Love, Death & Robots",
 	"image": "images/Love-Death-Robots.webp",
 	"description": "Like most (if not all) anthologies, the quality of Adult CG animated anthology Love, Death and Robots varies between episodes, but taken as a larger work, this show has a lot to give. The ideas vary wildly between comedy, horror, action, and drama, with a dark touch at the heart of the series – what happens if a home-cleaning unit starts trying to kill its owner? What happens if a yoghurt tries to secure world domination? Sometimes, an episode is as simple as a woman being on the run from a killer after witnessing a horrible murder.",
@@ -111,7 +111,7 @@
 		"$oid": "5f028064258ff350affd3607"
 	},
 	"trending": false,
-	"new": false,
+	"new": true,
 	"exclusive": false,
 	"name": "Bling Empire",
 	"image": "images/Bling-Empire.webp",
@@ -129,7 +129,7 @@
 		"$oid": "5f028064258ff350affd3608"
 	},
 	"trending": false,
-	"new": false,
+	"new": true,
 	"exclusive": false,
 	"name": "Heartstopper",
 	"image": "images/Heartstopper.webp",
@@ -148,7 +148,7 @@
 	},
 	"trending": false,
 	"new": false,
-	"exclusive": false,
+	"exclusive": true,
 	"name": "Russian Doll",
 	"image": "images/Russian-Doll.webp",
 	"description": "Orange Is The New Black's Natasha Lyonne stars in this dark comedy as Nadia, a wisecracking New Yorker who keeps dying and reliving her 36th birthday party in a surreal time loop – much like Groundhog Day. ",
@@ -164,7 +164,7 @@
 	"_id": {
 		"$oid": "5f028064258ff350affd3610"
 	},
-	"trending": false,
+	"trending": true,
 	"new": false,
 	"exclusive": false,
 	"name": "Better Call Saul",
@@ -184,7 +184,7 @@
 	},
 	"trending": false,
 	"new": false,
-	"exclusive": false,
+	"exclusive": true,
 	"name": "Bridgerton",
 	"image": "images/Bridgerton.webp",
 	"description": "This bold and sexually-charged Netflix period drama, based on Julia Quinn’s romance novels, has quickly become the talk of the ‘ton’. It follows a coterie of young socialites as they navigate a season of balls, betrothals, and betrayals in 1813 London – and attempt to outmanoeuvre the mysterious Lady Whistledown, whose ‘gossip sheets’ are able to make or break a debutante’s reputation overnight.",
@@ -202,7 +202,7 @@
 	},
 	"trending": false,
 	"new": false,
-	"exclusive": false,
+	"exclusive": true,
 	"name": "Formula 1: Drive to Survive",
 	"image": "images/Formula-1.webp",
 	"description": "Offering unprecedented behind-the-scenes access, Formula 1: Drive to Survive is a petrolhead's dream. The supercar TV series provides an in-depth peek behind the curtain on the biggest moments and flashpoints in the F1 world, including drive bust-ups and the ongoing race to become the most dominant F1 construction company in the world.",
@@ -219,7 +219,7 @@
 		"$oid": "5f028064258ff350affd3613"
 	},
 	"trending": false,
-	"new": false,
+	"new": true,
 	"exclusive": false,
 	"name": "Vikings Valhalla",
 	"image": "images/Vikings-Valhalla.webp",
@@ -237,7 +237,7 @@
 		"$oid": "5f028064258ff350affd3614"
 	},
 	"trending": false,
-	"new": false,
+	"new": true,
 	"exclusive": false,
 	"name": "Murderville",
 	"image": "images/Murderville.webp",
@@ -254,7 +254,7 @@
 	"_id": {
 		"$oid": "5f028064258ff350affd3615"
 	},
-	"trending": false,
+	"trending": true,
 	"new": false,
 	"exclusive": false,
 	"name": "Ozark",
@@ -274,7 +274,7 @@
 	},
 	"trending": false,
 	"new": false,
-	"exclusive": false,
+	"exclusive": true,
 	"name": "Cobra Kai",
 	"image": "images/Cobra-Kai.webp",
 	"description": "Once a YouTube original, Netflix snapped up the rights to Karate Kid continuation TV show Cobra Kai last year, and turned it into a smash hit. Set 34 years after Johnny Lawrence (William Zabka) was defeated by Danny LaRusso (Ralph Macchio), the former opens the Cobra Kai dojo once more to teach a new generation of kids how to fight. This sparks Johnny and Danny's old rivalry, and the action spins out from there.",
@@ -290,7 +290,7 @@
 	"_id": {
 		"$oid": "5f028064258ff350affd3617"
 	},
-	"trending": false,
+	"trending": true,
 	"new": false,
 	"exclusive": false,
 	"name": "The Witcher",
@@ -308,7 +308,7 @@
 	"_id": {
 		"$oid": "5f028064258ff350affd3618"
 	},
-	"trending": false,
+	"trending": true,
 	"new": false,
 	"exclusive": false,
 	"name": "Arcane",
@@ -328,7 +328,7 @@
 	},
 	"trending": false,
 	"new": false,
-	"exclusive": false,
+	"exclusive": true,
 	"name": "You",
 	"image": "images/You.webp",
 	"description": "You returned for its third season in October 2021 – this time casting Penn Badgley's obsessive Joe Goldberg as a father, as he settles down with dangerous partner Love (Victoria Pedretti) in the suburbs. Things don't stay normal for long, of course, but we'll let you discover that for yourself.",
@@ -344,7 +344,7 @@
 	"_id": {
 		"$oid": "5f028064258ff350affd3620"
 	},
-	"trending": false,
+	"trending": true,
 	"new": false,
 	"exclusive": false,
 	"name": "Seinfeld",
@@ -362,7 +362,7 @@
 	"_id": {
 		"$oid": "5f028064258ff350affd3621"
 	},
-	"trending": false,
+	"trending": true,
 	"new": false,
 	"exclusive": false,
 	"name": "Squid Game",
@@ -381,7 +381,7 @@
 		"$oid": "5f028064258ff350affd3622"
 	},
 	"trending": false,
-	"new": false,
+	"new": true,
 	"exclusive": false,
 	"name": "Midnight Mass",
 	"image": "images/Midnight-Mass.webp",
@@ -400,7 +400,7 @@
 	},
 	"trending": false,
 	"new": false,
-	"exclusive": false,
+	"exclusive": true,
 	"name": "Sex Education",
 	"image": "images/Sex-Education.webp",
 	"description": "Starring Gillian Anderson and Asa Butterfield alongside a slew of previously unknown actors, this British comedy is a treat. It's about the students, parents and teachers of Moordale Secondary School, where Butterfield plays Otis, the son of sex therapist Dr Jean Milburn (Anderson). He teams up with Maeve (Emma Mackey) to open their own in-school sex education clinic, and help fellow students out with their various issues.",
@@ -418,7 +418,7 @@
 	},
 	"trending": false,
 	"new": false,
-	"exclusive": false,
+	"exclusive": true,
 	"name": "I Think You Should Leave with Tim Robinson",
 	"image": "images/Tim-Robinson.webp",
 	"description": "It won't take you long to binge both seasons of Tim Robinson's latest sketch comedy series – each episode is only 15 minutes long. The basic setup of a lot of its sketches is the same: someone performs a faux pas, then takes that awkward moment to such extremes that it escalates in its strangeness. It's definitely an acquired taste, but then so many of the best things are. ",
@@ -435,7 +435,7 @@
 		"$oid": "5f028064258ff350affd3625"
 	},
 	"trending": false,
-	"new": false,
+	"new": true,
 	"exclusive": false,
 	"name": "Sweet Tooth",
 	"image": "images/Sweet-Tooth.webp",
@@ -453,7 +453,7 @@
 		"$oid": "5f028064258ff350affd3626"
 	},
 	"trending": false,
-	"new": false,
+	"new": true,
 	"exclusive": false,
 	"name": "Shadow and Bone",
 	"image": "images/Shadow-and-Bone.webp",
@@ -472,7 +472,7 @@
 	},
 	"trending": false,
 	"new": false,
-	"exclusive": false,
+	"exclusive": true,
 	"name": "The Crown",
 	"image": "images/The-Crown.webp",
 	"description": "The Crown was Netflix's first big swing at a British prestige drama, the likes of which normally come from the BBC. The show's enormous budget results in a lavish depiction of the life of Queen Elizabeth II, first played by Claire Foy, and most recently portrayed by Olivia Colman in season 3, with a killer ensemble cast to boot.",
@@ -488,7 +488,7 @@
 	"_id": {
 		"$oid": "5f028064258ff350affd3628"
 	},
-	"trending": false,
+	"trending": true,
 	"new": false,
 	"exclusive": false,
 	"name": "Money Heist",
