@@ -70,7 +70,7 @@ const Favorites = props => {
         );
     } else {
         return (
-            <div className='container align-items-center' style={{marginBottom: '609px'}}>
+            <div className='container align-items-center' style={{marginBottom: '645px'}}>
                 <div className='row '>
                     <h4 style={{color: 'white'}}>You have no favorites selected.</h4>
                 </div>

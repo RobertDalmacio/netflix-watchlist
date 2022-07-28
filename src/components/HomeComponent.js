@@ -36,7 +36,7 @@ function RenderCard({item, isLoading, errMess}) {
 
 function Home(props) {
     return (
-        <div className='container' style={{marginBottom: '71px'}}>
+        <div className='container' style={{marginBottom: '107px'}}>
             <div className='row'>
                 <div className='col-md m-1 text-center'>
                     <h1 style={{color: 'white'}}>Trending Now</h1>

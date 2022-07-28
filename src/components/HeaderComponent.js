@@ -1,6 +1,7 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
 import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem,
-    Button, Modal, ModalHeader, ModalBody,
+    Button, Modal, ModalBody,
     Form, FormGroup, Input, Label } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 
@@ -11,11 +12,15 @@ class Header extends Component {
 
         this.state = {
             isNavOpen: false,
-            isModalOpen: false
+            isModalOpen: false,
+            isModal2Open: false
         };
 
         this.toggleNav = this.toggleNav.bind(this);
         this.toggleModal = this.toggleModal.bind(this);
+        this.toggleModal2 = this.toggleModal2.bind(this);
+        this.closeModal = this.closeModal.bind(this);
+        this.closeModal2 = this.closeModal2.bind(this);
         this.handleRegister = this.handleRegister.bind(this);
         this.handleLogin = this.handleLogin.bind(this);
         this.handleLogout = this.handleLogout.bind(this);
@@ -33,8 +38,27 @@ class Header extends Component {
         });
     }
 
+    toggleModal2() {
+        this.setState({
+            isModalOpen: !this.state.isModalOpen,
+            isModal2Open: !this.state.isModal2Open
+        });
+    }
+
+    closeModal() {
+        this.setState({ 
+            isModalOpen: false
+        })
+    }
+    
+    closeModal2() {
+        this.setState({ 
+            isModal2Open: false
+        })
+    }
+
     handleRegister(event) {
-        this.toggleModal();
+        this.toggleModal2();
         this.props.registerUser({firstname: this.firstname.value, lastname: this.lastname.value, username: this.username2.value, password: this.password2.value})
         event.preventDefault()
     }
@@ -101,7 +125,7 @@ class Header extends Component {
                                     { !this.props.auth.isAuthenticated 
                                         ?
                                         <Button outline onClick={this.toggleModal} style={{color: 'white'}}>
-                                            <i className="fa fa-sign-in fa-lg" /> Login / SignUp
+                                            <i className="fa fa-sign-in fa-lg" /> Login / Sign Up
                                             {this.props.auth.isFetching 
                                                 ? <span className="fa fa-spinner fa-pulse fa-fw" />
                                                 : null
@@ -126,54 +150,80 @@ class Header extends Component {
                 </Navbar>
 
                 <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
-                    <ModalHeader toggle={this.toggleModal}>Login</ModalHeader>
-                    <ModalBody>
-                        <Form onSubmit={this.handleLogin}>
-                            <FormGroup>
-                                <Label htmlFor="username">Username</Label>
+                    <ModalBody style={{color: '#e60023'}}>
+                        <Button onClick={this.closeModal} style={{backgroundColor: '#fff', color: '#000', fontSize: '10pt', position: 'absolute', right: '10px' }}>
+                                <span className="fa fa-times" />
+                        </Button>
+                        <h2 toggle={this.toggleModal} className='text-center mt-2' style={{color: '#e60023'}}>Login</h2>
+                        <Form onSubmit={this.handleLogin} clasName='mx-auto' style={{maxWidth:'80%'}}>
+                            <FormGroup className='offset-3'>
+                                <Label htmlFor="username" className='mb-0 pb-0'>Username</Label>
                                 <Input type="text" id="username" name="username"
                                     innerRef={input => this.username = input} />
                             </FormGroup>
-                            <FormGroup>
-                                <Label htmlFor="password">Password</Label>
+                            <FormGroup className='offset-3'>
+                                <Label htmlFor="password" className='mb-0 pb-0'>Password</Label>
                                 <Input type="password" id="password" name="password"
                                     innerRef={input => this.password = input} />
-                            </FormGroup>
-                            <FormGroup check>
-                                <Label check>
-                                    <Input type="checkbox" name="remember"
-                                        innerRef={input => this.remember = input} />
-                                    Remember me
-                                </Label>
-                            </FormGroup>
-                            <Button type="submit" value="submit" color="primary">Login</Button>
+                            </FormGroup >
+                            <div className="text-center offset-3">
+                                <Button className='btn' type="submit" value="submit" style={{backgroundColor: '#000', color: '#fff', fontWeight: 'bold', fontSize: '10pt' }}>
+                                    <span className="fa fa-sign-out fa-lg pr-1" /> Login
+                                </Button>
+                            </div>
                         </Form>
+                        <div className='text-center mt-3' style={{color: '#e60023'}}>
+                            <p className='pb-0 mb-0' style={{fontSize: '8pt'}}>
+                                Not a member?
+                            </p>
+                            <a className='btn pt-0 mt-0' onClick={this.toggleModal2} style={{fontSize: '9pt', fontWeight: 'bold', color: '#e60023'}}>
+                                Sign Up
+                            </a>
+                        </div>
                     </ModalBody>
+                </Modal>
 
-                    <ModalBody>
-                        <Form onSubmit={this.handleRegister}>
-                            <FormGroup>
-                                <Label htmlFor="firstname">First Name</Label>
+                <Modal isOpen={this.state.isModal2Open} toggle={this.toggleModal2}>
+                    <ModalBody style={{color: '#e60023'}}>
+                    <Button onClick={this.closeModal2} style={{backgroundColor: '#fff', color: '#000', fontSize: '10pt', position: 'absolute', right: '10px' }}>
+                                <span className="fa fa-times" />
+                        </Button>
+                        <h2 toggle={this.toggleModal} className='text-center mt-2' style={{color: '#e60023'}}>Sign Up</h2>
+                        <Form onSubmit={this.handleRegister} clasName='mx-auto' style={{maxWidth:'80%'}}>
+                            <FormGroup className='offset-3'>
+                                <Label htmlFor="firstname" className='mb-0 pb-0'>First Name</Label>
                                 <Input type="text" id="firstname" name="firstname"
                                     innerRef={input => this.firstname = input} />
                             </FormGroup>
-                            <FormGroup>
-                                <Label htmlFor="lastname">Last Name</Label>
+                            <FormGroup className='offset-3'>
+                                <Label htmlFor="lastname" className='mb-0 pb-0'>Last Name</Label>
                                 <Input type="text" id="lastname" name="lastname"
                                     innerRef={input => this.lastname = input} />
                             </FormGroup>
-                            <FormGroup>
-                                <Label htmlFor="username2">Username</Label>
+                            <FormGroup className='offset-3'>
+                                <Label htmlFor="username2" className='mb-0 pb-0'>Username</Label>
                                 <Input type="text" id="username2" name="username2"
                                     innerRef={input => this.username2 = input} />
                             </FormGroup>
-                            <FormGroup>
-                                <Label htmlFor="password2">Password</Label>
+                            <FormGroup className='offset-3'>
+                                <Label htmlFor="password2" className='mb-0 pb-0'>Password</Label>
                                 <Input type="password" id="password2" name="password2"
                                     innerRef={input => this.password2 = input} />
                             </FormGroup>
-                            <Button type="submit" value="submit" color="secondary">Register</Button>
+                            <div className="text-center offset-3">
+                                <Button className='btn' type="submit" value="submit" style={{backgroundColor: '#000', color: '#fff', fontWeight: 'bold', fontSize: '10pt' }}>
+                                    <span className="fa fa-sign-out fa-lg pr-1" /> Register
+                                </Button>
+                            </div>
                         </Form>
+                        <div className='text-center mt-3' style={{color: '#e60023'}}>
+                            <p className='pb-0 mb-0' style={{fontSize: '8pt'}}>
+                                Already a member?
+                            </p>
+                            <a className='btn pt-0 mt-0' onClick={this.toggleModal2} style={{fontSize: '9pt', fontWeight: 'bold', color: '#e60023'}}>
+                                Log In
+                            </a>
+                        </div>
                     </ModalBody>
                 </Modal>
 

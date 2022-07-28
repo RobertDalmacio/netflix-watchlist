@@ -146,7 +146,7 @@ function CampsiteInfo(props) {
     }
     if (props.campsite) {
         return (
-            <div className="container">
+            <div className="container" style={{marginBottom: '177px'}}>
                 <div className="row">
                     <div className="col">
                         <Breadcrumb>
