@@ -113,7 +113,74 @@ export const postComment = (campsiteId, rating, text) => dispatch => {
     });
 };
 
-export const newUser = (firstName, lastName, username, password) => {}
+export const fetchUsers = () => dispatch => {
+    return fetch(baseUrl + 'users')
+        .then(response => {
+                if (response.ok) {
+                    return response;
+                } else {
+                    const error = new Error(`Error ${response.status}: ${response.statusText}`);
+                    error.response = response;
+                    throw error;
+                }
+            },
+            error => {
+                const errMess = new Error(error.message);
+                throw errMess;
+            }
+        )
+        .then(response => response.json())
+        .then(users => dispatch(addUsers(users)))
+        .catch(error => dispatch(usersFailed(error.message)));
+};
+
+export const usersFailed = errMess => ({
+    type: ActionTypes.USERS_FAILED,
+    payload: errMess
+});
+
+export const addUsers = users => ({
+    type: ActionTypes.ADD_USERS,
+    payload: users
+});
+
+export const addUser = user => ({
+    type: ActionTypes.ADD_USER,
+    payload: user
+});
+
+export const registerUser = (firstname, lastname, username, password) => dispatch => {
+    const newUser = {
+        firstname: firstname,
+        lastname: lastname,
+        username: username,
+        password: password
+    }
+
+    return fetch(baseUrl + 'users/signup', {
+        method: 'POST',
+        body: JSON.stringify(newUser),
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    })
+    .then(response => {
+        if (response.ok) {
+            return response;
+        } else {
+            const error = new Error(`Error ${response.status}: ${response.statusText}`);
+            error.response = response;
+            throw error;
+        }
+    },
+    error => { throw error; }
+    )
+    .then(response => response.json())
+    .then(response => dispatch(addUser(response)))
+    .catch(error => {
+        console.log('post User', error.message);
+    });
+}
 
 export const requestLogin = creds => {
     return {

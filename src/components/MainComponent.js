@@ -8,13 +8,14 @@ import Home from './HomeComponent';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { actions } from 'react-redux-form';
-import { postComment, fetchCampsites, fetchComments, loginUser, logoutUser, fetchFavorites, postFavorite, deleteFavorite } from '../redux/ActionCreators';
+import { postComment, fetchCampsites, fetchComments, fetchUsers, loginUser, logoutUser, registerUser, fetchFavorites, postFavorite, deleteFavorite } from '../redux/ActionCreators';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 const mapStateToProps = state => {
     return {
         campsites: state.campsites,
         comments: state.comments,
+        users: state.users,
         favorites: state.favorites,
         auth: state.auth
     };
@@ -22,9 +23,11 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = {
     postComment: (campsiteId, rating, text) => (postComment(campsiteId, rating, text)),
+    registerUser: (firstName, lastName, username, password) => (registerUser(firstName, lastName, username, password)),
     fetchCampsites: () => (fetchCampsites()),
     resetFeedbackForm: () => (actions.reset('feedbackForm')),
     fetchComments: () => (fetchComments()),
+    fetchUsers: () => (fetchUsers()),
     loginUser: creds => (loginUser(creds)),
     logoutUser: () => (logoutUser()),
     fetchFavorites: () => (fetchFavorites()),
@@ -37,10 +40,9 @@ class Main extends Component {
     componentDidMount() {
         this.props.fetchCampsites();
         this.props.fetchComments();
+        this.props.fetchUsers();
         this.props.fetchFavorites();
     }
-
-
 
     render() {
 
@@ -107,7 +109,8 @@ class Main extends Component {
             <div>
                 <Header auth={this.props.auth} 
                     loginUser={this.props.loginUser} 
-                    logoutUser={this.props.logoutUser} 
+                    logoutUser={this.props.logoutUser}
+                    registerUser={this.props.registerUser} 
                 />   
                 <TransitionGroup>
                     <CSSTransition key={this.props.location.key} classNames="page" timeout={300}>

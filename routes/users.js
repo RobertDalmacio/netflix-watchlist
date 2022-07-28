@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.options('*', cors.corsWithOptions, (req, res) => res.sendStatus(200));
 
-router.get('/', cors.corsWithOptions, authenticate.verifyUser, authenticate.verifyAdmin, (req, res, next) => {
+router.get('/', cors.corsWithOptions, (req, res, next) => {
     User.find()
     .then(users => {
         res.statusCode = 200;
@@ -19,20 +19,21 @@ router.get('/', cors.corsWithOptions, authenticate.verifyUser, authenticate.veri
 });
 
 router.post('/signup', cors.corsWithOptions, (req, res) => {
+    console.log('users/signup POST body', req.body.firstname.firstname)
     User.register(
-        new User({username: req.body.username}),
-        req.body.password,
+        new User({username: req.body.firstname.username}),
+        req.body.firstname.password,
         (err, user) => {
             if (err) {
                 res.statusCode = 500;
                 res.setHeader('Content-Type', 'application/json');
                 res.json({err: err});
             } else {
-                if (req.body.firstname) {
-                    user.firstname = req.body.firstname;
+                if (req.body.firstname.firstname) {
+                    user.firstname = req.body.firstname.firstname;
                 }
-                if (req.body.lastname) {
-                    user.lastname = req.body.lastname;
+                if (req.body.firstname.lastname) {
+                    user.lastname = req.body.firstname.lastname;
                 }
                 user.save(err => {
                     if (err) {

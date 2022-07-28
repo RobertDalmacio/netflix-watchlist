@@ -6,6 +6,10 @@ export const ADD_COMMENTS = 'ADD_COMMENTS';
 export const COMMENTS_FAILED = 'COMMENTS_FAILED';
 export const ADD_COMMENT = 'ADD_COMMENT';
 
+export const ADD_USERS = 'ADD_USERS';
+export const USERS_FAILED = 'USERS_FAILED';
+export const ADD_USER = 'ADD_USER';
+
 export const LOGIN_REQUEST = 'LOGIN_REQUEST';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAILURE = 'LOGIN_FAILURE';
