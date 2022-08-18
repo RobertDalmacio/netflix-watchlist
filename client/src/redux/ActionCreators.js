@@ -4,7 +4,7 @@ import { baseUrl } from '../shared/baseUrl';
 export const fetchCampsites = () => dispatch => {
     dispatch(campsitesLoading());
 
-    return fetch(baseUrl + 'campsites')
+    return fetch(baseUrl + 'api/campsites')
         .then(response => {
                 if (response.ok) {
                     return response;
@@ -39,7 +39,7 @@ export const addCampsites = campsites => ({
 });
 
 export const fetchComments = () => dispatch => {
-    return fetch(baseUrl + 'comments')
+    return fetch(baseUrl + 'api/comments')
         .then(response => {
                 if (response.ok) {
                     return response;
@@ -85,7 +85,7 @@ export const postComment = (campsiteId, rating, text) => dispatch => {
 
     const bearer = 'Bearer ' + localStorage.getItem('token');
 
-    return fetch(baseUrl + 'comments', {
+    return fetch(baseUrl + 'api/comments', {
         method: 'POST',
         body: JSON.stringify(newComment),
         headers: {
@@ -114,7 +114,7 @@ export const postComment = (campsiteId, rating, text) => dispatch => {
 };
 
 export const fetchUsers = () => dispatch => {
-    return fetch(baseUrl + 'users')
+    return fetch(baseUrl + 'api/users')
         .then(response => {
                 if (response.ok) {
                     return response;
@@ -157,7 +157,7 @@ export const registerUser = (firstname, lastname, username, password) => dispatc
         password: password
     }
 
-    return fetch(baseUrl + 'users/signup', {
+    return fetch(baseUrl + 'api/users/signup', {
         method: 'POST',
         body: JSON.stringify(newUser),
         headers: {
@@ -209,7 +209,7 @@ export const loginUser = creds => dispatch => {
     // We dispatch requestLogin to kickoff the call to the API
     dispatch(requestLogin(creds))
 
-    return fetch(baseUrl + 'users/login', {
+    return fetch(baseUrl + 'api/users/login', {
         method: 'POST',
         headers: { 
             'Content-Type': 'application/json' 
@@ -270,7 +270,7 @@ export const postFavorite = campsiteId => dispatch => {
 
     const bearer = 'Bearer ' + localStorage.getItem('token');
 
-    return fetch(baseUrl + 'favorites/' + campsiteId, {
+    return fetch(baseUrl + 'api/favorites/' + campsiteId, {
         method: 'POST',
         headers: {
             'Authorization': bearer
@@ -300,7 +300,7 @@ export const deleteFavorite = campsiteId => dispatch => {
 
     const bearer = 'Bearer ' + localStorage.getItem('token');
 
-    return fetch(baseUrl + 'favorites/' + campsiteId, {
+    return fetch(baseUrl + 'api/favorites/' + campsiteId, {
         method: 'DELETE',
         headers: {
             'Authorization': bearer
@@ -331,7 +331,7 @@ export const fetchFavorites = () => dispatch => {
 
     const bearer = 'Bearer ' + localStorage.getItem('token');
 
-    return fetch(baseUrl + 'favorites', {
+    return fetch(baseUrl + 'api/favorites', {
         headers: {
             'Authorization': bearer
         },
